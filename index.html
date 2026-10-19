@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy Policy — NI Act 1881 Legal Calculator</title>
+<meta name="description" content="Privacy Policy for the NI Act 1881 Legal Calculator (Section 138 limitation periods).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Instrument+Sans:wght@400;600&family=Homemade+Apple&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F5F0; --cheque:#DDEAE3; --cheque-line:#9FBBAE;
+  --ink:#1D2A4D; --text:#2A3042; --muted:#5E667A; --stamp:#B3261E;
+  --rule:#D9D8CF; --card:#FFFFFF; --on-ink:#FFFFFF;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --hand:"Homemade Apple","Segoe Script",cursive;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#12161F; --cheque:#1C2A2B; --cheque-line:#3F5C57;
+    --ink:#C9D4FF; --text:#D8DBE4; --muted:#9AA2B5; --stamp:#FF7B70;
+    --rule:#2A303D; --card:#181D29; --on-ink:#12161F;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#12161F; --cheque:#1C2A2B; --cheque-line:#3F5C57;
+  --ink:#C9D4FF; --text:#D8DBE4; --muted:#9AA2B5; --stamp:#FF7B70;
+  --rule:#2A303D; --card:#181D29; --on-ink:#12161F;
+}
+*,*::before,*::after{box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--text);font:1.1rem/1.7 var(--serif);-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--stamp);outline-offset:3px;border-radius:4px}
+
+.bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;max-width:1100px;margin:0 auto;padding:.9rem 1.25rem;font-family:var(--sans);font-size:.95rem}
+.bar strong{color:var(--ink);font-weight:600;line-height:1.25}
+.bar button{background:none;border:1px solid var(--rule);padding:.55rem .9rem;border-radius:999px;cursor:pointer;min-height:44px;white-space:nowrap}
+
+/* Cheque hero */
+.hero{max-width:1100px;margin:0 auto;padding:.5rem 1.25rem 1.8rem}
+.cheque{position:relative;background:var(--cheque);border:1.5px solid var(--cheque-line);border-radius:10px;padding:1.4rem 1.6rem 1.6rem;
+  background-image:repeating-linear-gradient(0deg,transparent 0 27px,color-mix(in srgb,var(--cheque-line) 35%,transparent) 27px 28px);
+  box-shadow:0 18px 40px -24px rgba(29,42,77,.5)}
+.cheque .top{display:flex;justify-content:space-between;gap:1rem;font:.82rem/1.4 var(--sans);color:var(--muted)}
+.cheque h1{font-weight:600;font-size:clamp(1.9rem,6vw,3.2rem);line-height:1.1;color:var(--ink);margin:1.1rem 0;letter-spacing:-.01em;max-width:16ch}
+.line{display:flex;align-items:baseline;flex-wrap:wrap;gap:.3rem .8rem;font:.92rem var(--sans);margin:.55rem 0}
+.line>span:first-child{color:var(--muted);min-width:5rem}
+.line .fill{flex:1 1 12rem;border-bottom:1.5px dotted var(--ink);padding-bottom:.1rem;font:1.1rem var(--serif);color:var(--ink)}
+.amount{border:1.5px solid var(--ink);padding:.1rem .7rem;font:1.2rem var(--serif);color:var(--ink);white-space:nowrap}
+.sign{font:1.1rem var(--hand);color:var(--ink);text-align:right;margin-top:.9rem}
+.sign small{display:block;font:.78rem var(--sans);color:var(--muted);border-top:1px solid var(--ink);margin:.4rem 0 0 auto;padding-top:.2rem;width:min(13rem,100%)}
+.stamp{position:absolute;right:6%;top:44%;transform:rotate(-9deg);border:3px solid var(--stamp);color:var(--stamp);
+  font:600 1.2rem/1 var(--sans);letter-spacing:.06em;padding:.5rem .85rem;border-radius:6px;opacity:.88;mix-blend-mode:multiply;
+  animation:thud .5s .3s cubic-bezier(.2,1.6,.4,1) both}
+:root[data-theme="dark"] .stamp{mix-blend-mode:normal}
+@keyframes thud{from{opacity:0;transform:rotate(-9deg) scale(1.8)}to{opacity:.88;transform:rotate(-9deg) scale(1)}}
+.updated{margin:.9rem 0 0;font:.88rem var(--sans);color:var(--muted)}
+
+/* Tabs */
+.wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem 3rem;display:grid;grid-template-columns:220px minmax(0,1fr);gap:3rem;align-items:start}
+.tabs{position:sticky;top:1rem;display:flex;flex-direction:column;font:.95rem var(--sans)}
+.tabs button{display:flex;align-items:center;gap:.7rem;text-align:left;background:none;border:0;border-left:2px solid var(--rule);
+  padding:.7rem 1rem;min-height:44px;color:var(--muted);cursor:pointer}
+.tabs button .n{font-weight:600;color:var(--muted);min-width:1.1rem}
+.tabs button:hover{color:var(--ink)}
+.tabs button[aria-selected="true"]{color:var(--ink);font-weight:600;border-left-color:var(--stamp)}
+.tabs button[aria-selected="true"] .n{color:var(--stamp)}
+
+.panel{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:2rem 2.2rem;min-height:16rem;touch-action:pan-y}
+.panel[hidden]{display:none}
+.panel h2{font-size:1.7rem;line-height:1.2;color:var(--ink);margin:0 0 .8rem;font-weight:600}
+.panel p{margin:0;max-width:62ch;text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
+.contact{margin:1.2rem 0 0;border:1px solid var(--rule);border-radius:10px;overflow:hidden;font-family:var(--sans)}
+.contact div{display:flex;gap:1rem;padding:.8rem 1rem;border-top:1px solid var(--rule)}
+.contact div:first-child{border-top:0}
+.contact dt{flex:0 0 6.5rem;color:var(--muted);font-size:.92rem}
+.contact dd{margin:0;color:var(--ink);font-weight:600;font-size:1rem}
+.contact a{color:var(--ink);text-underline-offset:3px}
+@media (max-width:480px){.contact div{flex-direction:column;gap:.1rem}.contact dt{flex:none}}
+.pill{display:inline-block;font:600 .82rem var(--sans);background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:.25rem .8rem;margin:1rem .4rem 0 0;color:var(--ink)}
+.panel.in{animation:swap .25s ease-out}
+@keyframes swap{from{opacity:0;transform:translateX(var(--dx,12px))}to{opacity:1;transform:none}}
+
+.pager{display:flex;justify-content:space-between;gap:.75rem;margin-top:1.8rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-family:var(--sans)}
+.pager button{flex:1;min-height:48px;padding:.6rem 1rem;border-radius:10px;border:1px solid var(--rule);background:none;cursor:pointer;font-size:.95rem}
+.pager button.next{background:var(--ink);color:var(--on-ink);border-color:var(--ink);font-weight:600}
+.pager button:disabled{visibility:hidden}
+
+footer{max-width:1100px;margin:0 auto;padding:1.5rem 1.25rem 2.5rem;border-top:1px solid var(--rule);font:.88rem/1.5 var(--sans);color:var(--muted)}
+
+/* Phone */
+@media (max-width:820px){
+  body{font-size:1.05rem}
+  .bar strong{font-size:.9rem}
+  .cheque{padding:1.1rem}
+  .cheque .top{flex-direction:column;gap:.1rem}
+  .stamp{position:static;display:inline-block;margin-top:.8rem;animation:none;transform:rotate(-5deg);opacity:.88}
+  .wrap{grid-template-columns:1fr;gap:.9rem;padding-bottom:2rem}
+  .tabs{position:sticky;top:0;z-index:5;flex-direction:row;overflow-x:auto;gap:.5rem;margin:0 -1.25rem;padding:.6rem 1.25rem;
+    background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--rule);scrollbar-width:none;scroll-snap-type:x proximity}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs button{flex:none;border:1px solid var(--rule);border-radius:999px;padding:.5rem 1rem;white-space:nowrap;scroll-snap-align:center;background:var(--card)}
+  .tabs button .n{display:none}
+  .tabs button[aria-selected="true"]{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
+  .panel{padding:1.4rem 1.2rem;min-height:0}
+  .panel h2{font-size:1.45rem}
+  .pager{margin-top:1.4rem}
+}
+@media (max-width:380px){.pager button{padding:.6rem .5rem;font-size:.88rem}}
+@media (prefers-reduced-motion:reduce){.stamp,.panel.in{animation:none}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <strong>NI Act 1881 Legal Calculator</strong>
+  <button id="theme" type="button" aria-label="Toggle dark mode">Dark mode</button>
+</header>
+
+<main>
+<section class="hero">
+  <div class="cheque">
+    <div class="top"><span>Section 138 · Negotiable Instruments Act, 1881</span><span>Privacy Policy</span></div>
+    <h1>Your calculations stay with you.</h1>
+    <div class="line"><span>Pay to</span><span class="fill">No server. No database. No third party.</span></div>
+    <div class="line"><span>Amount</span><span class="fill">Your dates and entries</span><span class="amount">₹ 0 collected</span></div>
+    <div class="sign">NI Act Calculator<small>Authorised signatory</small></div>
+    <div class="stamp" aria-hidden="true">NOT STORED</div>
+  </div>
+  <p class="updated">Last updated: 19 October 2026</p>
+</section>
+
+<div class="wrap">
+  <div class="tabs" id="tabs" role="tablist" aria-label="Privacy policy sections"></div>
+
+  <div id="panels">
+    <section class="panel" id="p-introduction" role="tabpanel" data-tab="Introduction">
+      <h2>1. Introduction</h2>
+      <p>NI Act 1881 Legal Calculator respects your privacy. This application helps users calculate dates and limitation periods related to Section 138 of the Negotiable Instruments Act, 1881.</p>
+    </section>
+
+    <section class="panel" id="p-collection" role="tabpanel" data-tab="Collection" hidden>
+      <h2>2. Information Collection</h2>
+      <p>The app is designed to calculate results using dates and information entered by the user. It does not intentionally collect or store the information entered into the calculator.</p>
+      <span class="pill">No sign-up</span><span class="pill">No tracking of entries</span>
+    </section>
+
+    <section class="panel" id="p-storage" role="tabpanel" data-tab="Storage" hidden>
+      <h2>3. Data Storage</h2>
+      <p>The app does not maintain a database or save users' entered calculation data on a server. Entered information is used to perform calculations and display results.</p>
+    </section>
+
+    <section class="panel" id="p-sharing" role="tabpanel" data-tab="Sharing" hidden>
+      <h2>4. Sharing of Information</h2>
+      <p>The app does not intentionally sell, share, or disclose users' entered calculation information to third parties.</p>
+    </section>
+
+    <section class="panel" id="p-third-party" role="tabpanel" data-tab="Third parties" hidden>
+      <h2>5. Third-Party Services</h2>
+      <p>The app does not intentionally use advertising or analytics services to collect user information. If third-party services are added in the future, this policy will be updated as necessary.</p>
+    </section>
+
+    <section class="panel" id="p-children" role="tabpanel" data-tab="Children" hidden>
+      <h2>6. Children's Privacy</h2>
+      <p>The app does not intentionally collect personal information from children or other users.</p>
+    </section>
+
+    <section class="panel" id="p-security" role="tabpanel" data-tab="Security" hidden>
+      <h2>7. Security</h2>
+      <p>Because the app is designed not to store entered calculation data, it does not maintain a server-side database of that information.</p>
+    </section>
+
+    <section class="panel" id="p-changes" role="tabpanel" data-tab="Changes" hidden>
+      <h2>8. Changes to This Privacy Policy</h2>
+      <p>This Privacy Policy may be updated if the app's functionality or data practices change. The latest version will be published on the Privacy Policy webpage.</p>
+    </section>
+
+    <section class="panel" id="p-internet" role="tabpanel" data-tab="Internet" hidden>
+      <h2>9. Internet Usage and Data Transmission</h2>
+      <p>The app uses an internet connection to access and operate its online features. Internet usage is limited to the app's functionality. The app does not intentionally transmit users' entered calculation data to any server or third party. The dates and information entered into the calculator are used only to perform calculations and display results. No financial transactions or payments are processed through the app.</p>
+      <span class="pill">No payments</span><span class="pill">Entries not transmitted</span>
+    </section>
+
+    <section class="panel" id="p-contact" role="tabpanel" data-tab="Contact" hidden>
+      <h2>10. Contact Us</h2>
+      <p>For questions about this Privacy Policy, contact the app developer:</p>
+      <dl class="contact">
+        <div><dt>App name</dt><dd>NI Act 1881 Legal Calculator</dd></div>
+        <div><dt>Developer</dt><dd>Nishchay Sharma</dd></div>
+        <div><dt>Phone</dt><dd><a href="tel:+918233107683">8233107683</a></dd></div>
+      </dl>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer>© <span id="yr">2026</span> NI Act 1881 Legal Calculator. This app provides date calculations only and is not legal advice.</footer>
+
+<script>
+(function(){
+  var tabsEl=document.getElementById('tabs');
+  var panels=[].slice.call(document.querySelectorAll('.panel'));
+  var tabs=[],cur=0;
+
+  // Build tabs from panels
+  panels.forEach(function(p,i){
+    var b=document.createElement('button');
+    b.type='button';b.id='t-'+i;b.setAttribute('role','tab');
+    b.setAttribute('aria-controls',p.id);
+    b.innerHTML='<span class="n">'+(i+1)+'</span><span>'+p.dataset.tab+'</span>';
+    b.addEventListener('click',function(){show(i,true)});
+    tabsEl.appendChild(b);tabs.push(b);
+    p.setAttribute('aria-labelledby',b.id);p.tabIndex=0;
+
+    // Previous / next buttons
+    var pg=document.createElement('div');pg.className='pager';
+    var prev=document.createElement('button');prev.type='button';prev.textContent='‹ '+(i>0?panels[i-1].dataset.tab:'');
+    var next=document.createElement('button');next.type='button';next.className='next';
+    next.textContent=(i<panels.length-1?panels[i+1].dataset.tab:'')+' ›';
+    prev.disabled=i===0;next.disabled=i===panels.length-1;
+    prev.addEventListener('click',function(){show(i-1,true,true)});
+    next.addEventListener('click',function(){show(i+1,true,true)});
+    pg.appendChild(prev);pg.appendChild(next);p.appendChild(pg);
+  });
+
+  function show(i,animate,scrollTop){
+    if(i<0||i>=panels.length)return;
+    var dir=i>=cur?1:-1;
+    panels.forEach(function(p,k){p.hidden=k!==i;p.classList.remove('in')});
+    tabs.forEach(function(t,k){
+      t.setAttribute('aria-selected',k===i?'true':'false');
+      t.tabIndex=k===i?0:-1;
+    });
+    var p=panels[i];
+    if(animate){p.style.setProperty('--dx',(dir*14)+'px');void p.offsetWidth;p.classList.add('in')}
+    // keep the active tab visible in the scrolling tab bar on phones
+    var t=tabs[i];
+    if(tabsEl.scrollWidth>tabsEl.clientWidth){
+      tabsEl.scrollTo({left:t.offsetLeft-(tabsEl.clientWidth-t.offsetWidth)/2,behavior:'smooth'});
+    }
+    if(scrollTop){
+      var top=document.querySelector('.wrap').getBoundingClientRect().top+window.scrollY-(window.innerWidth<=820?60:16);
+      window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+    }
+    cur=i;
+    try{history.replaceState(null,'','#'+p.id.replace('p-',''))}catch(e){}
+  }
+
+  // Keyboard: arrow keys move between tabs
+  tabsEl.addEventListener('keydown',function(e){
+    var k=e.key,n=null;
+    if(k==='ArrowRight'||k==='ArrowDown')n=(cur+1)%panels.length;
+    else if(k==='ArrowLeft'||k==='ArrowUp')n=(cur-1+panels.length)%panels.length;
+    else if(k==='Home')n=0;else if(k==='End')n=panels.length-1;
+    if(n!==null){e.preventDefault();show(n,true);tabs[n].focus()}
+  });
+
+  // Swipe left/right on the panel (phones)
+  var sx=0,sy=0;
+  var box=document.getElementById('panels');
+  box.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
+  box.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;
+    if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.6){show(cur+(dx<0?1:-1),true)}
+  },{passive:true});
+
+  // Open the tab named in the URL (e.g. privacy-policy.html#security)
+  var start=0,h=location.hash.replace('#','');
+  if(h){panels.forEach(function(p,i){if(p.id==='p-'+h)start=i})}
+  show(start,false);
+
+  // Theme toggle (follows the device setting by default)
+  var root=document.documentElement,btn=document.getElementById('theme');
+  var dark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+  function apply(){root.setAttribute('data-theme',dark?'dark':'light');btn.textContent=dark?'Light mode':'Dark mode'}
+  btn.addEventListener('click',function(){dark=!dark;apply()});
+  apply();
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
